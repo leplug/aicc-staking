@@ -1,10 +1,21 @@
 {
   "compilerOptions": {
-    "types": ["mocha", "chai"],
-    "typeRoots": ["./node_modules/@types"],
-    "lib": ["es2015"],
-    "module": "commonjs",
-    "target": "es6",
-    "esModuleInterop": true
-  }
+    "types": ["mocha", "chai"],            // Keep mocha and chai for type definitions
+    "typeRoots": ["./node_modules/@types"], // Ensure it looks at the @types folder for type definitions
+    "lib": ["es2015"],                     // Keep ES2015 for standard library features
+    "module": "ESNext",                     // Change from "commonjs" to "ESNext" for ES module support
+    "target": "ESNext",                     // Update target to ESNext for the latest JavaScript version
+    "esModuleInterop": true,                // Allow interop between ES modules and CommonJS
+    "moduleResolution": "Node",             // Use Node's module resolution strategy
+    "strict": true,                         // Enable strict type checking for better safety (optional but recommended)
+    "skipLibCheck": true,                   // Skip library checks to speed up compilation (optional)
+    "outDir": "./dist",                     // Output directory for compiled JavaScript
+    "rootDir": "./src"                      // Root directory for TypeScript files
+  },
+  "include": [
+    "src/**/*.ts"                           // Include all TypeScript files from the src directory
+  ],
+  "exclude": [
+    "node_modules"                          // Exclude node_modules directory from compilation
+  ]
 }
